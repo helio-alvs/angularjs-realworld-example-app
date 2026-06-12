@@ -1,7 +1,7 @@
 # PLAN — 001-fundacao-infra
 
 ## Status
-State: PLANNED
+State: READY
 
 ## Objetivo
 Criar os templates de issue GitHub (DoR/DoD conforme §6), atestar o `.git/info/exclude`

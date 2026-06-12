@@ -1,6 +1,6 @@
 # PROGRESS — 001-fundacao-infra
 
-State: REVIEWING
+State: READY
 
 ## Timeline
 | Data/hora | Papel | State | Evidência |
@@ -14,6 +14,7 @@ State: REVIEWING
 | 2026-06-12 | evaluator | REVIEWING | Todos os critérios de aceite e gates confirmados; conformidade §6 verificada; veredicto APROVADO |
 | 2026-06-12 | evaluator (re-run) | REVIEWING | Gates re-executados de forma independente; REVIEW.md criado em docs/agent/work/001-fundacao-infra/REVIEW.md; veredito PASS confirmado |
 | 2026-06-12 | reviewer | REVIEWING | Revisão de qualidade (Prompt 04 — Passo 2); diff real inspecionado; 4 gates re-verificados independentemente; veredito APPROVED; seção adicionada ao REVIEW.md |
+| 2026-06-12 | closer | READY | Issues habilitadas pelo usuário; issue #1 criada; label `chore` criada; commit `a0e1594` referenciando #1; STATE.md e ROADMAP.md atualizados; slice declarada READY |
 
 ## Decisões
 - Node version: `"22"` (Node 22 LTS, suporte até 2027) — aprovado pelo usuário.
@@ -104,3 +105,26 @@ Issues estão **desabilitadas** no repositório GitHub. O usuário deve escolher
 **Opção B:** Confirmar outro sistema de rastreamento aceito pelo guia (e.g., Projeto GitHub, referência a PR, ou waiver explícito do requisito de issue).
 
 Sem essa decisão, não é possível commitar os artefatos com rastreabilidade conforme §6/§7.
+
+---
+
+## Closeout final (closer — 2026-06-12)
+
+### Verificações executadas
+| Verificação | Resultado | Evidência |
+|---|---|---|
+| Issues habilitadas no repositório | **PASS ✅** | Usuário confirmou; `gh issue create` bem-sucedido |
+| Issue criada com template chore.md | **PASS ✅** | `gh issue create` → `https://github.com/helio-alvs/angularjs-realworld-example-app/issues/1` |
+| Label `chore` criada | **PASS ✅** | `gh label create chore` — cor `#0075ca` |
+| Arquivos proibidos §13 fora do staging | **PASS ✅** | `git status --short \| grep -E "(documentacao/\|harness/\|AGENTS\.md\|CLAUDE\.md)"` — saída vazia |
+| Commit realizado com Conventional Commits referenciando #1 | **PASS ✅** | Commit `a0e1594` — mensagem: `chore: add issue templates, update devcontainer to Node 22, add agent docs (#1)` |
+| Definition of Done completo | **PASS ✅** | 6/6 critérios de aceite PASS, 4 gates PASS, REVIEW.md APPROVED, riscos residuais explícitos |
+
+## Nota de deriva (Passo 3)
+- **Escopo:** dentro do PLAN.md; nenhum arquivo fora de `files_owned` foi alterado.
+- **Custo estimado vs real:** budget_max_usd: $0.50; estimate ≤ 4 turns. Real: ~8 turnos (planner, generator, evaluator ×2, reviewer, closer ×3) — excedeu o budget estimado. Causa: pending_decision de issues (2 iterações de bloqueio). Ajuste para próximas slices: verificar se Issues estão habilitadas ANTES da primeira iteração de closeout; adicionar gate de pré-condição no PLAN.md quando rastreabilidade via issue for exigida.
+
+## Estado final
+- **State: READY**
+- Commit: `a0e1594` → `chore: add issue templates, update devcontainer to Node 22, add agent docs (#1)`
+- Issue: https://github.com/helio-alvs/angularjs-realworld-example-app/issues/1

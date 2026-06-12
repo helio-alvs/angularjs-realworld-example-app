@@ -10,21 +10,22 @@
 **Objetivo:** Estabelecer a base de governança e infra antes de qualquer código de produto.
 
 **Escopo:**
-- Criar templates de Issues no GitHub (DoR/DoD conforme §6 do guia)
-- Configurar Conventional Commits (§7)
-- Configurar bleeding branch
-- Adicionar `.git/info/exclude` com `documentacao/`, `harness/`, `AGENTS.md`, `CLAUDE.md` (§13)
-- Atualizar `.devcontainer/devcontainer.json` para Node LTS compatível com Angular 21
+- ~~Criar templates de Issues no GitHub (DoR/DoD conforme §6 do guia)~~ ✅ **DONE** — slice 001-fundacao-infra (commit `a0e1594`, issue #1)
+- ~~Atualizar `.devcontainer/devcontainer.json` para Node LTS compatível com Angular 21~~ ✅ **DONE** — Node 22 LTS (slice 001-fundacao-infra)
+- ~~Adicionar `.git/info/exclude` com `documentacao/`, `harness/`, `AGENTS.md`, `CLAUDE.md` (§13)~~ ✅ **DONE** — atestado na slice 001-fundacao-infra (pré-existente)
+- Configurar Conventional Commits (§7) — **pendente** (002-conventional-commits)
+- Configurar bleeding branch — **pendente** (002-conventional-commits ou slice separada)
 
 **Fora do escopo desta fase:** qualquer código de produto Angular 21.
 
 **Critérios de aceite:**
-- Templates de issue criados e usáveis
-- `.git/info/exclude` configurado (items do §13 não aparecem em `git status`)
-- DevContainer usando Node LTS (build Angular CLI funciona no container)
-- Bleeding branch existindo no repositório
+- [x] Templates de issue criados e usáveis
+- [x] `.git/info/exclude` configurado (items do §13 não aparecem em `git status`)
+- [x] DevContainer usando Node LTS (build Angular CLI funciona no container)
+- [ ] Conventional Commits configurado (commitlint/husky)
+- [ ] Bleeding branch existindo no repositório
 
-**Status:** `PLANNED`
+**Status:** `IN_PROGRESS` — 3/5 itens concluídos; aguardando slice 002-conventional-commits
 
 ---
 

@@ -1,25 +1,26 @@
 # STATE
 
-State: REVIEWING
+State: READY
 Current phase: 1 — Fundação
-Last completed phase: none
-Active work unit: docs/agent/work/001-fundacao-infra
+Last completed phase: none (Fase 1 in-progress — 3/5 itens concluídos)
+Active work unit: none (próxima: 002-conventional-commits)
+
+## Slice concluída
+- `docs/agent/work/001-fundacao-infra` — **READY**
+  - Commit: `a0e1594` (`chore: add issue templates, update devcontainer to Node 22, add agent docs (#1)`)
+  - Issue: https://github.com/helio-alvs/angularjs-realworld-example-app/issues/1
 
 ## Briefing — o que o próximo agente faz primeiro
 1. Ler `docs/agent/OPERATING-GUIDE.md` e este `STATE.md`.
-2. Atuar como **closer** (retomada): a slice 001-fundacao-infra está bloqueada por pending_decision.
-3. **Pending decision (usuário deve responder antes de prosseguir):**
-   - Issues estão **desabilitadas** no repositório (`helio-alvs/angularjs-realworld-example-app`).
-   - `gh issue create` retornou erro: `the repository has disabled issues`.
-   - **Usuário deve escolher:**
-     - **Opção A (recomendada):** Habilitar Issues em Settings → General → Features → Issues, então confirmar o `#<id>` da issue criada.
-     - **Opção B:** Confirmar outro mecanismo de rastreamento (Projeto GitHub, PR, ou waiver explícito do requisito de issue).
-4. Com o `#<id>` (ou waiver) em mãos, o closer deve:
-   - Commitar os artefatos (`.devcontainer/devcontainer.json`, `.github/ISSUE_TEMPLATE/`, `docs/`) com mensagem Conventional Commits referenciando `#<id>`.
-   - Confirmar que nenhum arquivo proibido (§13) está staged/tracked.
-   - Atualizar PROGRESS.md com a linha do commit.
-   - Atualizar STATE.md: state → READY, avançar para a próxima slice da Fase 1.
-5. Próxima slice da Fase 1 (após declarar READY): **002-conventional-commits** — configurar Conventional Commits (commitlint/husky) + bleeding branch (§5.2/§7).
+2. Atuar como **planner** para a próxima slice da Fase 1: **002-conventional-commits**.
+3. Escopo da slice 002:
+   - Configurar **Conventional Commits** no repositório:
+     - `commitlint` + `@commitlint/config-conventional`
+     - `husky` (hook `commit-msg`)
+   - Criar a **bleeding branch** (`bleeding` ou `next`) a partir de `master`.
+   - Registrar a configuração em `docs/agent/work/002-conventional-commits/PLAN.md`.
+4. Criar issue no GitHub usando o template `chore.md` **antes** de iniciar o trabalho (§6/§7).
+5. **Pré-condição a verificar** no PLAN.md da slice 002: confirmar que o repositório tem Issues habilitadas (já confirmado) e que `gh` CLI está disponível (já confirmado — v2.94.0).
 
 ## Não faça
 - Não inventar requisitos de produto.
