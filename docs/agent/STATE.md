@@ -2,25 +2,20 @@
 
 State: READY
 Current phase: 1 — Fundação
-Last completed phase: none (Fase 1 in-progress — 3/5 itens concluídos)
-Active work unit: none (próxima: 002-conventional-commits)
+Last completed phase: none (Fase 1 in-progress — 4/5 itens concluídos)
+Active work unit: none (próxima: 003-eslint-prettier — a definir)
 
-## Slice concluída
+## Slices concluídas
 - `docs/agent/work/001-fundacao-infra` — **READY**
   - Commit: `a0e1594` (`chore: add issue templates, update devcontainer to Node 22, add agent docs (#1)`)
   - Issue: https://github.com/helio-alvs/angularjs-realworld-example-app/issues/1
+- `docs/agent/work/002-conventional-commits` — **READY**
+  - Issue: https://github.com/helio-alvs/angularjs-realworld-example-app/issues/2
 
 ## Briefing — o que o próximo agente faz primeiro
 1. Ler `docs/agent/OPERATING-GUIDE.md` e este `STATE.md`.
-2. Atuar como **planner** para a próxima slice da Fase 1: **002-conventional-commits**.
-3. Escopo da slice 002:
-   - Configurar **Conventional Commits** no repositório:
-     - `commitlint` + `@commitlint/config-conventional`
-     - `husky` (hook `commit-msg`)
-   - Criar a **bleeding branch** (`bleeding` ou `next`) a partir de `master`.
-   - Registrar a configuração em `docs/agent/work/002-conventional-commits/PLAN.md`.
-4. Criar issue no GitHub usando o template `chore.md` **antes** de iniciar o trabalho (§6/§7).
-5. **Pré-condição a verificar** no PLAN.md da slice 002: confirmar que o repositório tem Issues habilitadas (já confirmado) e que `gh` CLI está disponível (já confirmado — v2.94.0).
+2. Verificar o próximo item pendente da Fase 1 e atuar como **planner** para a slice seguinte.
+3. Criar issue no GitHub usando o template adequado **antes** de iniciar o trabalho (§6/§7).
 
 ## Não faça
 - Não inventar requisitos de produto.
